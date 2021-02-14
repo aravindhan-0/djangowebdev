@@ -10,15 +10,15 @@
     <title>Chat Bot UI/UX </title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
-    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'autocomplete/css/main.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'autocomplete/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
-    <link href="{% static 'css/select2.min.css' %}" rel="stylesheet" type="text/css" />
-    <link href="{% static 'css/chatBot.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'autocomplete/css/select2.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'autocomplete/css/chatBot.css' %}" rel="stylesheet" type="text/css" />
     <!-- <link href="css/timeline.css" rel="stylesheet" type="text/css" /> -->
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
-    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'autocomplete/js/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'autocomplete/css/jquery-ui.css' %}">
+    <script src="{% static 'autocomplete/js/jquery-ui.js' %}"></script>
 </head>
 
 <body>
@@ -145,9 +145,9 @@
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <!-- <script src="js/jquery-3.1.1.min.js"></script> -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/select2.min.js' %}"></script>
+    <script src="{% static 'autocomplete/js/popper.min.js' %}"></script>
+    <script src="{% static 'autocomplete/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'autocomplete/js/select2.min.js' %}"></script>
     <script>
         $(document).ready(function () {
             $(".select2_el").select2({
@@ -182,7 +182,7 @@
             });
 
             $('.msgInput').autocomplete({
-                source: ['php', 'python'],
+                source: "{% url 'autocomplete' %}",
                 minLength: 2,
             });
         });
